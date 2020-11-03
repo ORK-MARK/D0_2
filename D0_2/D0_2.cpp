@@ -45,27 +45,38 @@ void ft_is_negative(int n) {
 }
 
 void ft_putnbr(int nb) {
-	int b ;
+	int b;
 	char sims;
 	int i;
 	int e;
 	int end;
 	b = nb;
 	e = 1;
-	for (; b >= 10; e++, b /= 10);
-	e--;
-	for (; e >= 0; e-- ) {
-		i = nb / step(e);
-		end = i % 10;
-		sims = 48 + end;
-		ft_putchar(sims);
+	if (nb > 0) {
+		for (; b >= 10; e++, b /= 10);
+
+		e--;
+
+		for (; e >= 0; e--) {
+			i = nb / step(e);
+			end = i % 10;
+			sims = 48 + end;
+			ft_putchar(sims);
+		}
+		printf("\n");
 	}
-	printf("\n");
+	else {
+
+	}
 }
+
 int main() {
 	/*ft_print_alphabet();
 	ft_print_reverse_alphabet();
 	ft_print_numbers();
 	ft_is_negative(-2);*/
-	ft_putnbr(-12345);
+	//ft_putnbr(-12345);
+	int a;
+	a = -123 % 10;
+	printf("%d", a);
 }
