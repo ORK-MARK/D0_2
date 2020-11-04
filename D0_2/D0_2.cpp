@@ -52,7 +52,7 @@ void ft_putnbr(int nb) {
 	int end;
 	b = nb;
 	e = 1;
-	if (nb > 0) {
+	if (nb >= 0) {
 		for (; b >= 10; e++, b /= 10);
 
 		e--;
@@ -66,6 +66,19 @@ void ft_putnbr(int nb) {
 		printf("\n");
 	}
 	else {
+		for (; b <= -10; e++, b /= 10);
+
+		e--;
+
+		ft_putchar(45);
+		for (; e >= 0; e--)
+		{
+			i = nb / step(e);
+			end = i % 10;
+			sims = 48 - (end);
+			ft_putchar(sims);
+		}
+
 
 	}
 }
@@ -75,8 +88,5 @@ int main() {
 	ft_print_reverse_alphabet();
 	ft_print_numbers();
 	ft_is_negative(-2);*/
-	//ft_putnbr(-12345);
-	int a;
-	a = -123 % 10;
-	printf("%d", a);
+	ft_putnbr(-2147483648);
 }
